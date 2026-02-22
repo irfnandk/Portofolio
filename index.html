@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irfan Andika |Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+  <h2 class="logo">Portofolio</h2>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <nav id="navMenu">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-card" id="tilt">
+    <span class="badge">Available for projects</span>
+    <h1>Hi, I'm <span>Irfan Andika</span></h1>
+    <h3 id="typing"></h3>
+    <p>I build futuristic websites, dashboards, and full-stack systems.</p>
+
+    <div class="hero-btn">
+      <a class="btn" href="#projects">View My Work</a>
+      <a class="btn-outline" href="#">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+Mahasiswa Pendidikan Teknologi Informasi di IKIP PGRI Bojonegoro dengan fokus pada desain antarmuka futuristik, pengembangan sistem, dan teknologi web modern.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>My Skills</h2>
+
+  <div class="skill">
+    <span>HTML</span>
+    <div class="bar"><div class="fill" style="width:95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>CSS</span>
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>JavaScript</span>
+    <div class="bar"><div class="fill" style="width:50%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>PHP / Node.js</span>
+    <div class="bar"><div class="fill" style="width:50%"></div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-grid">
+
+    <a class="project-card" href="https://oneastore.vercel.app/" target="_blank">
+      One a Store
+      <small>Online Store System</small>
+    </a>
+
+    <a class="project-card" href="https://ptioneaclass.vercel.app/" target="_blank">
+      PTI Class Website
+      <small>Portofolio class</small>
+    </a>
+
+    <a class="project-card" href="https://valentine-day-ivory.vercel.app/" target="_blank">
+      Valentine day
+      <small>Interactive Valentine's Day Website</small>
+    </a>
+
+    <a class="project-card" href="https://sim-cuti.vercel.app/" target="_blank">
+      SIM CUTI MAHASISWA
+      <small>System Cuti Mahasiswa</small>
+    </a>
+
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button>Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Irfan Andika • Ultra Futuristic Portfolio
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
