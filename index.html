@@ -2,22 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Irfan Andika |Portfolio</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Irfan Andika Pratama | 19</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <canvas id="particles"></canvas>
 
 <header>
-  <h2 class="logo">Portofolio</h2>
-
-  <div class="menu-toggle" id="menuToggle">☰</div>
-
+  <h2 class="logo">Irfan<span>.</span>dev</h2>
+  <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
   <nav id="navMenu">
     <a href="#home" class="nav-link">Home</a>
     <a href="#about" class="nav-link">About</a>
@@ -27,98 +24,200 @@
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section id="home" class="hero">
   <div class="hero-card" id="tilt">
-    <span class="badge">Available for projects</span>
-    <h1>Hi, I'm <span>Irfan Andika</span></h1>
+    <span class="badge"><i class="fas fa-code-branch"></i> Available for freelance</span>
+    <h1>Hi, I'm <span>Irfan Andika Pratama</span></h1>
     <h3 id="typing"></h3>
-    <p>I build futuristic websites, dashboards, and full-stack systems.</p>
-
+    <p>Frontend · Backend · UI/UX Designer — Membangun solusi digital futuristik.</p>
     <div class="hero-btn">
-      <a class="btn" href="#projects">View My Work</a>
-      <a class="btn-outline" href="#">Download CV</a>
+      <a class="btn" href="#projects"><i class="fas fa-arrow-down"></i> Lihat Proyek</a>
+      <a class="btn-outline" href="#contact"><i class="fas fa-paper-plane"></i> Hubungi Saya</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION : DETAIL DIRI -->
 <section id="about">
-  <h2>About Me</h2>
-  <p>
-Mahasiswa Pendidikan Teknologi Informasi di IKIP PGRI Bojonegoro dengan fokus pada desain antarmuka futuristik, pengembangan sistem, dan teknologi web modern.
-  </p>
+  <div class="container">
+    <h2><span class="accent">//</span> Tentang Saya</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Saya <strong>Irfan Andika Pratama</strong>, mahasiswa semester 2 <strong>Pendidikan Teknologi Informasi</strong> di IKIP PGRI Bojonegoro. Passion di bidang pengembangan web, desain antarmuka, dan sistem informasi. Berpengalaman membangun berbagai aplikasi sejak SMK hingga sekarang.</p>
+        <div class="info-list">
+          <div><i class="fas fa-university"></i> <strong>Prodi:</strong> Pendidikan Teknologi Informasi</div>
+          <div><i class="fas fa-school"></i> <strong>Universitas:</strong> IKIP PGRI BOJONEGORO</div>
+          <div><i class="fas fa-graduation-cap"></i> <strong>Semester:</strong> 2</div>
+          <div><i class="fas fa-map-marker-alt"></i> <strong>Alamat:</strong> Desa Bogo RT 1 RW 1, Kec. Kapas, Kab. Bojonegoro</div>
+          <div><i class="fas fa-phone-alt"></i> <strong>Telepon:</strong> <a href="https://wa.me/6282337193803" target="_blank">082337193803</a></div>
+          <div><i class="fas fa-bicycle"></i> <strong>Hobi:</strong> Bersepeda & Main Game</div>
+        </div>
+        <div class="motivation">
+          <i class="fas fa-quote-left"></i>
+          <p>"Hidup itu seperti sepeda, harus terus bergerak maju untuk menjaga keseimbangan. Jangan takut jatuh, tapi takutlah tidak pernah mencoba."</p>
+        </div>
+      </div>
+      <div class="about-education">
+        <div class="edu-card">
+          <h3><i class="fas fa-history"></i> Riwayat Pendidikan</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="year">2024 - sekarang</span>
+              <p><strong>IKIP PGRI BOJONEGORO</strong><br>Pendidikan Teknologi Informasi (Semester 2)</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2021 - 2024</span>
+              <p><strong>SMK Negeri 4 Bojonegoro</strong><br>Rekayasa Perangkat Lunak (RPL)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS SECTION -->
 <section id="skills">
-  <h2>My Skills</h2>
-
-  <div class="skill">
-    <span>HTML</span>
-    <div class="bar"><div class="fill" style="width:95%"></div></div>
-  </div>
-
-  <div class="skill">
-    <span>CSS</span>
-    <div class="bar"><div class="fill" style="width:80%"></div></div>
-  </div>
-
-  <div class="skill">
-    <span>JavaScript</span>
-    <div class="bar"><div class="fill" style="width:50%"></div></div>
-  </div>
-
-  <div class="skill">
-    <span>PHP / Node.js</span>
-    <div class="bar"><div class="fill" style="width:50%"></div></div>
+  <div class="container">
+    <h2><span class="accent">//</span> Kompetensi & Tools</h2>
+    <div class="skills-wrapper">
+      <div class="skills-bars">
+        <div class="skill">
+          <span><i class="fab fa-microsoft"></i> Microsoft Word</span>
+          <div class="bar"><div class="fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill">
+          <span><i class="fas fa-file-excel"></i> Microsoft Excel</span>
+          <div class="bar"><div class="fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill">
+          <span><i class="fas fa-chart-line"></i> PowerPoint</span>
+          <div class="bar"><div class="fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <span><i class="fab fa-figma"></i> Figma (UI/UX)</span>
+          <div class="bar"><div class="fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill">
+          <span><i class="fab fa-html5"></i> HTML5 & CSS3</span>
+          <div class="bar"><div class="fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill">
+          <span><i class="fab fa-js"></i> JavaScript (Frontend)</span>
+          <div class="bar"><div class="fill" style="width:75%"></div></div>
+        </div>
+        <div class="skill">
+          <span><i class="fas fa-server"></i> Backend (PHP/Node.js)</span>
+          <div class="bar"><div class="fill" style="width:68%"></div></div>
+        </div>
+      </div>
+      <div class="skill-tagcloud">
+        <div class="tag">C++</div>
+        <div class="tag">Java NetBeans</div>
+        <div class="tag">Visual Basic</div>
+        <div class="tag">MySQL</div>
+        <div class="tag">REST API</div>
+        <div class="tag">Responsive Design</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS : KULIAH + PENGALAMAN SMK -->
 <section id="projects">
-  <h2>Projects</h2>
+  <div class="container">
+    <h2><span class="accent">//</span> Proyek & Portofolio</h2>
+    
+    <div class="project-category">
+      <h3><i class="fas fa-laptop-code"></i> Project Selama Kuliah</h3>
+      <div class="project-grid">
+        <a class="project-card" href="https://oneastore.vercel.app/" target="_blank">
+          <i class="fas fa-store"></i> One a Store
+          <small>E-commerce modern | Fullstack</small>
+        </a>
+        <a class="project-card" href="https://ptioneaclass.vercel.app/" target="_blank">
+          <i class="fas fa-users"></i> PTI Class Website
+          <small>Website portofolio kelas interaktif</small>
+        </a>
+        <a class="project-card" href="https://valentine-day-ivory.vercel.app/" target="_blank">
+          <i class="fas fa-heart"></i> Valentine Game
+          <small>Game interaktif berbasis JavaScript</small>
+        </a>
+        <a class="project-card" href="https://sim-cuti.vercel.app/" target="_blank">
+          <i class="fas fa-calendar-alt"></i> SIM CUTI Mahasiswa
+          <small>Sistem manajemen cuti digital</small>
+        </a>
+      </div>
+    </div>
 
-  <div class="project-grid">
-
-    <a class="project-card" href="https://oneastore.vercel.app/" target="_blank">
-      One a Store
-      <small>Online Store System</small>
-    </a>
-
-    <a class="project-card" href="https://ptioneaclass.vercel.app/" target="_blank">
-      PTI Class Website
-      <small>Portofolio class</small>
-    </a>
-
-    <a class="project-card" href="https://valentine-day-ivory.vercel.app/" target="_blank">
-      Valentine day
-      <small>Interactive Valentine's Day Website</small>
-    </a>
-
-    <a class="project-card" href="https://sim-cuti.vercel.app/" target="_blank">
-      SIM CUTI MAHASISWA
-      <small>System Cuti Mahasiswa</small>
-    </a>
-
-
+    <div class="project-category">
+      <h3><i class="fas fa-microchip"></i> Pengalaman SMK (RPL) - Aplikasi & Software</h3>
+      <div class="project-grid smk-grid">
+        <div class="project-card static">
+          <i class="fas fa-calculator"></i> Kalkulator C++
+          <small>Console App | Logika aritmetika</small>
+        </div>
+        <div class="project-card static">
+          <i class="fas fa-gamepad"></i> Game Visual Basic
+          <small>Game sederhana dengan VB.NET</small>
+        </div>
+        <div class="project-card static">
+          <i class="fas fa-cash-register"></i> Aplikasi Kasir (Java NetBeans)
+          <small>Desktop app | Manajemen transaksi</small>
+        </div>
+        <div class="project-card static">
+          <i class="fas fa-book"></i> Perpustakaan Digital (Java)
+          <small>CRUD + Database | GUI Swing</small>
+        </div>
+        <div class="project-card static">
+          <i class="fas fa-hand-holding-heart"></i> Layanan Masyarakat (Java)
+          <small>Aplikasi pengaduan warga</small>
+        </div>
+        <div class="project-card static">
+          <i class="fas fa-school-flag"></i> Website Sekolah (Lomba)
+          <small>HTML/CSS/JS | Kompetisi web design</small>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT + SOSIAL MEDIA -->
 <section id="contact">
-  <h2>Contact Me</h2>
-
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Message"></textarea>
-    <button>Send Message</button>
-  </form>
+  <div class="container">
+    <h2><span class="accent">//</span> Hubungi Saya</h2>
+    <div class="contact-flex">
+      <div class="contact-info">
+        <h3>Mari terhubung</h3>
+        <p>Siap untuk kolaborasi, proyek freelance, atau diskusi teknologi.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/irfnandkp" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i> @irfnandkp</a>
+          <a href="https://wa.me/6282337193803" target="_blank" class="social-icon wa"><i class="fab fa-whatsapp"></i> 082337193803</a>
+          <a href="mailto:irfanandika@example.com" class="social-icon email"><i class="fas fa-envelope"></i> irfan.pt@edu.ikippgri.ac.id</a>
+        </div>
+        <div class="direct-contact">
+          <p><i class="fas fa-map-pin"></i> Bojonegoro, Jawa Timur</p>
+        </div>
+      </div>
+      <form class="contact-form" id="demoForm">
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email Aktif" required>
+        <textarea placeholder="Pesan / Tawaran Kerja Sama" rows="4"></textarea>
+        <button type="submit">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+        <small style="display: block; margin-top: 10px; opacity:0.7;">*Demo form, hubungi via WA/IG untuk respon cepat</small>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Irfan Andika • Ultra Futuristic Portfolio
+  <p>© 2026 Irfan Andika Pratama — dibangun dengan <i class="fas fa-code"></i> & partikel futuristik</p>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/irfnandkp" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/6282337193803" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
