@@ -1,225 +1,781 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Irfan Andika Pratama | 19</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta name="description" content="Portfolio Irfan Andika Pratama - Mahasiswa Pendidikan Teknologi Informasi">
+<title>Irfan Andika Pratama | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+  /* ----- RESET & VARIABLES ----- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-dark: #0a0c18;
+    --surface: #101322;
+    --surface-light: #181d32;
+    --border: #262c46;
+    --text-primary: #f0f3ff;
+    --text-secondary: #b9c3e6;
+    --accent: #8f9eff;
+    --accent-hover: #7a8be8;
+    --radius-card: 1.25rem;
+    --transition: all 0.2s ease;
+  }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  /* Canvas Particles (seperti dulu) */
+  #particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* ----- TYPOGRAPHY ----- */
+  h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+  }
+
+  /* ----- HEADER & NAVIGATION ----- */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 12, 24, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    padding: 0.3rem 0;
+  }
+
+  nav a:hover, nav a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+  }
+
+  /* mobile nav */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    nav {
+      position: absolute;
+      top: 68px;
+      right: 5%;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      width: 220px;
+      gap: 0;
+      border-radius: var(--radius-card);
+      padding: 0.8rem 0;
+      display: none;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
+    }
+    nav a {
+      padding: 0.8rem 1.8rem;
+      display: block;
+      border-left: 2px solid transparent;
+    }
+    nav a:hover, nav a.active {
+      border-bottom: none;
+      background: rgba(143, 158, 255, 0.1);
+      border-left: 2px solid var(--accent);
+    }
+    nav.active {
+      display: flex;
+    }
+  }
+
+  /* ----- SECTIONS ----- */
+  section {
+    padding: 6rem 6% 5rem;
+  }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* ----- HERO ----- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+  }
+  .hero-card {
+    background: rgba(16, 19, 34, 0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    padding: 2.8rem 2rem;
+    text-align: center;
+    max-width: 760px;
+    width: 100%;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: #1e233e;
+    padding: 0.3rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 span {
+    color: var(--accent);
+  }
+  #typing {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin: 1rem 0;
+    min-height: 3rem;
+  }
+  .hero p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .btn, .btn-outline {
+    padding: 0.7rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  .btn {
+    background: var(--accent);
+    color: var(--bg-dark);
+  }
+  .btn-outline {
+    border: 1.5px solid var(--accent);
+    color: var(--text-primary);
+    background: transparent;
+  }
+  .btn:hover, .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+  .btn:hover {
+    background: var(--accent-hover);
+  }
+  .btn-outline:hover {
+    background: rgba(143, 158, 255, 0.1);
+  }
+
+  /* ----- ABOUT GRID ----- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 850px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .info-card, .edu-card {
+    background: rgba(16, 19, 34, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-card);
+    padding: 1.8rem;
+    border: 1px solid var(--border);
+  }
+  .info-list {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .info-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.7rem;
+  }
+  .info-item strong {
+    width: 110px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .info-item a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .motivation {
+    background: rgba(143, 158, 255, 0.08);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    border-left: 3px solid var(--accent);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+  .timeline-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+  }
+  .year {
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* ----- SKILLS ----- */
+  .skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .skills-bars {
+    flex: 2;
+    min-width: 240px;
+  }
+  .skill-tags {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0.75rem;
+  }
+  .skill-item {
+    margin-bottom: 1.2rem;
+  }
+  .skill-header {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bar-bg {
+    background: var(--surface-light);
+    border-radius: 12px;
+    height: 7px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    background: linear-gradient(90deg, var(--accent), #b8c4ff);
+    height: 7px;
+    border-radius: 12px;
+    width: 0%;
+  }
+  .tag {
+    background: rgba(24, 29, 50, 0.8);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    font-weight: 500;
+  }
+
+  /* ----- PROJECTS ----- */
+  .project-category {
+    margin-bottom: 3rem;
+  }
+  .project-category h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #e0e6ff;
+  }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: rgba(16, 19, 34, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 1.4rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    display: block;
+  }
+  .project-card strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .project-card small {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+  }
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    background: #1a1e38;
+  }
+  .static {
+    cursor: default;
+  }
+  .static:hover {
+    transform: translateY(-2px);
+  }
+
+  /* ----- CONTACT ----- */
+  .contact-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+  .contact-info, .contact-form {
+    flex: 1;
+  }
+  .contact-line {
+    display: flex;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .contact-line strong {
+    width: 100px;
+    color: var(--accent);
+  }
+  .contact-line a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(10, 12, 24, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(143,158,255,0.2);
+  }
+  .submit-btn {
+    background: var(--accent);
+    border: none;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    color: #0a0c18;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  .submit-btn:hover {
+    background: var(--accent-hover);
+  }
+
+  /* ----- FOOTER ----- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.8rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: #8d97bd;
+  }
+  .footer-links a {
+    color: #8d97bd;
+    text-decoration: none;
+    margin-left: 1.8rem;
+    transition: var(--transition);
+  }
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    section {
+      padding: 5rem 5%;
+    }
+    .hero h1 {
+      font-size: 1.9rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+    }
+    .info-item strong {
+      width: 100%;
+      margin-bottom: 0.2rem;
+    }
+    .contact-line strong {
+      width: 100%;
+    }
+  }
+</style>
 </head>
 <body>
 
+<!-- Canvas Particles (seperti versi dulu) -->
 <canvas id="particles"></canvas>
 
 <header>
-  <h2 class="logo">Irfan<span>.</span>dev</h2>
-  <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+  <div class="logo">Irfan Andika</div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
   <nav id="navMenu">
-    <a href="#home" class="nav-link">Home</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#skills" class="nav-link">Skills</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#home" class="nav-link">Beranda</a>
+    <a href="#about" class="nav-link">Tentang</a>
+    <a href="#skills" class="nav-link">Keahlian</a>
+    <a href="#projects" class="nav-link">Proyek</a>
+    <a href="#contact" class="nav-link">Kontak</a>
   </nav>
 </header>
 
-<!-- HERO SECTION -->
-<section id="home" class="hero">
-  <div class="hero-card" id="tilt">
-    <span class="badge"><i class="fas fa-code-branch"></i> Available for freelance</span>
-    <h1>Hi, I'm <span>Irfan Andika Pratama</span></h1>
-    <h3 id="typing"></h3>
-    <p>Frontend · Backend · UI/UX Designer — Membangun solusi digital futuristik.</p>
-    <div class="hero-btn">
-      <a class="btn" href="#projects"><i class="fas fa-arrow-down"></i> Lihat Proyek</a>
-      <a class="btn-outline" href="#contact"><i class="fas fa-paper-plane"></i> Hubungi Saya</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT SECTION : DETAIL DIRI -->
-<section id="about">
-  <div class="container">
-    <h2><span class="accent">//</span> Tentang Saya</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>Saya <strong>Irfan Andika Pratama</strong>, mahasiswa semester 2 <strong>Pendidikan Teknologi Informasi</strong> di IKIP PGRI Bojonegoro. Passion di bidang pengembangan web, desain antarmuka, dan sistem informasi. Berpengalaman membangun berbagai aplikasi sejak SMK hingga sekarang.</p>
-        <div class="info-list">
-          <div><i class="fas fa-university"></i> <strong>Prodi:</strong> Pendidikan Teknologi Informasi</div>
-          <div><i class="fas fa-school"></i> <strong>Universitas:</strong> IKIP PGRI BOJONEGORO</div>
-          <div><i class="fas fa-graduation-cap"></i> <strong>Semester:</strong> 2</div>
-          <div><i class="fas fa-map-marker-alt"></i> <strong>Alamat:</strong> Desa Bogo RT 1 RW 1, Kec. Kapas, Kab. Bojonegoro</div>
-          <div><i class="fas fa-phone-alt"></i> <strong>Telepon:</strong> <a href="https://wa.me/6282337193803" target="_blank">082337193803</a></div>
-          <div><i class="fas fa-bicycle"></i> <strong>Hobi:</strong> Bersepeda & Main Game</div>
-        </div>
-        <div class="motivation">
-          <i class="fas fa-quote-left"></i>
-          <p>"Hidup itu seperti sepeda, harus terus bergerak maju untuk menjaga keseimbangan. Jangan takut jatuh, tapi takutlah tidak pernah mencoba."</p>
-        </div>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-card">
+      <div class="hero-badge">Portfolio 2026</div>
+      <h1>Halo, saya <span>Irfan Andika Pratama</span></h1>
+      <div id="typing"></div>
+      <p>Mahasiswa Pendidikan Teknologi Informasi | Frontend, Backend & UI/UX</p>
+      <div class="btn-group">
+        <a href="#projects" class="btn">Lihat Proyek</a>
+        <a href="#contact" class="btn-outline">Hubungi Saya</a>
       </div>
-      <div class="about-education">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>Tentang Saya</h2>
+      <div class="about-grid">
+        <div class="info-card">
+          <p>Saya <strong>Irfan Andika Pratama</strong>, mahasiswa semester 2 Program Studi <strong>Pendidikan Teknologi Informasi</strong> di IKIP PGRI Bojonegoro. Saya memiliki ketertarikan dalam pengembangan web, desain antarmuka, serta sistem yang efisien dan mudah digunakan.</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Prodi</strong> Pendidikan Teknologi Informasi</div>
+            <div class="info-item"><strong>Universitas</strong> IKIP PGRI BOJONEGORO</div>
+            <div class="info-item"><strong>Semester</strong> 2</div>
+            <div class="info-item"><strong>Alamat</strong> Desa Bogo RT 1 RW 1, Kec. Kapas, Kab. Bojonegoro</div>
+            <div class="info-item"><strong>Telepon/WA</strong> <a href="https://wa.me/6282337193803" target="_blank">082337193803</a></div>
+            <div class="info-item"><strong>Hobi</strong> Bersepeda & Main Game</div>
+          </div>
+          <div class="motivation">
+            “Hidup itu seperti sepeda, harus terus bergerak maju untuk menjaga keseimbangan. Jangan takut jatuh, tapi takutlah tidak pernah mencoba.”
+          </div>
+        </div>
         <div class="edu-card">
-          <h3><i class="fas fa-history"></i> Riwayat Pendidikan</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="year">2024 - sekarang</span>
-              <p><strong>IKIP PGRI BOJONEGORO</strong><br>Pendidikan Teknologi Informasi (Semester 2)</p>
-            </div>
-            <div class="timeline-item">
-              <span class="year">2021 - 2024</span>
-              <p><strong>SMK Negeri 4 Bojonegoro</strong><br>Rekayasa Perangkat Lunak (RPL)</p>
-            </div>
+          <h3 style="font-size:1.3rem; margin-bottom:1rem; font-weight:600;">Riwayat Pendidikan</h3>
+          <div class="timeline-item">
+            <span class="year">2024 — Sekarang</span>
+            <p><strong>IKIP PGRI BOJONEGORO</strong><br>Pendidikan Teknologi Informasi (Semester 2)</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2021 — 2024</span>
+            <p><strong>SMK Negeri 4 Bojonegoro</strong><br>Rekayasa Perangkat Lunak (RPL)</p>
+            <small style="color:#9aa3c9;">Pengalaman: Kalkulator C++, Game Visual Basic, Kasir Java NetBeans, Perpustakaan Java, Layanan Masyarakat, Website Sekolah (lomba).</small>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS SECTION -->
-<section id="skills">
-  <div class="container">
-    <h2><span class="accent">//</span> Kompetensi & Tools</h2>
-    <div class="skills-wrapper">
-      <div class="skills-bars">
-        <div class="skill">
-          <span><i class="fab fa-microsoft"></i> Microsoft Word</span>
-          <div class="bar"><div class="fill" style="width:88%"></div></div>
+  <section id="skills">
+    <div class="container">
+      <h2>Keahlian</h2>
+      <div class="skills-wrapper">
+        <div class="skills-bars">
+          <div class="skill-item"><div class="skill-header">Microsoft Office (Word, Excel, PPT)</div><div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><div class="skill-header">Figma (UI/UX Design)</div><div class="bar-bg"><div class="bar-fill" style="width:82%"></div></div></div>
+          <div class="skill-item"><div class="skill-header">HTML5 & CSS3 (Responsive)</div><div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div></div>
+          <div class="skill-item"><div class="skill-header">JavaScript (Frontend)</div><div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="skill-item"><div class="skill-header">Backend (PHP / Node.js dasar)</div><div class="bar-bg"><div class="bar-fill" style="width:65%"></div></div></div>
         </div>
-        <div class="skill">
-          <span><i class="fas fa-file-excel"></i> Microsoft Excel</span>
-          <div class="bar"><div class="fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill">
-          <span><i class="fas fa-chart-line"></i> PowerPoint</span>
-          <div class="bar"><div class="fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill">
-          <span><i class="fab fa-figma"></i> Figma (UI/UX)</span>
-          <div class="bar"><div class="fill" style="width:78%"></div></div>
-        </div>
-        <div class="skill">
-          <span><i class="fab fa-html5"></i> HTML5 & CSS3</span>
-          <div class="bar"><div class="fill" style="width:90%"></div></div>
-        </div>
-        <div class="skill">
-          <span><i class="fab fa-js"></i> JavaScript (Frontend)</span>
-          <div class="bar"><div class="fill" style="width:75%"></div></div>
-        </div>
-        <div class="skill">
-          <span><i class="fas fa-server"></i> Backend (PHP/Node.js)</span>
-          <div class="bar"><div class="fill" style="width:68%"></div></div>
-        </div>
-      </div>
-      <div class="skill-tagcloud">
-        <div class="tag">C++</div>
-        <div class="tag">Java NetBeans</div>
-        <div class="tag">Visual Basic</div>
-        <div class="tag">MySQL</div>
-        <div class="tag">REST API</div>
-        <div class="tag">Responsive Design</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS : KULIAH + PENGALAMAN SMK -->
-<section id="projects">
-  <div class="container">
-    <h2><span class="accent">//</span> Proyek & Portofolio</h2>
-    
-    <div class="project-category">
-      <h3><i class="fas fa-laptop-code"></i> Project Selama Kuliah</h3>
-      <div class="project-grid">
-        <a class="project-card" href="https://oneastore.vercel.app/" target="_blank">
-          <i class="fas fa-store"></i> One a Store
-          <small>E-commerce modern | Fullstack</small>
-        </a>
-        <a class="project-card" href="https://ptioneaclass.vercel.app/" target="_blank">
-          <i class="fas fa-users"></i> PTI Class Website
-          <small>Website portofolio kelas interaktif</small>
-        </a>
-        <a class="project-card" href="https://valentine-day-ivory.vercel.app/" target="_blank">
-          <i class="fas fa-heart"></i> Valentine Game
-          <small>Game interaktif berbasis JavaScript</small>
-        </a>
-        <a class="project-card" href="https://sim-cuti.vercel.app/" target="_blank">
-          <i class="fas fa-calendar-alt"></i> SIM CUTI Mahasiswa
-          <small>Sistem manajemen cuti digital</small>
-        </a>
-      </div>
-    </div>
-
-    <div class="project-category">
-      <h3><i class="fas fa-microchip"></i> Pengalaman SMK (RPL) - Aplikasi & Software</h3>
-      <div class="project-grid smk-grid">
-        <div class="project-card static">
-          <i class="fas fa-calculator"></i> Kalkulator C++
-          <small>Console App | Logika aritmetika</small>
-        </div>
-        <div class="project-card static">
-          <i class="fas fa-gamepad"></i> Game Visual Basic
-          <small>Game sederhana dengan VB.NET</small>
-        </div>
-        <div class="project-card static">
-          <i class="fas fa-cash-register"></i> Aplikasi Kasir (Java NetBeans)
-          <small>Desktop app | Manajemen transaksi</small>
-        </div>
-        <div class="project-card static">
-          <i class="fas fa-book"></i> Perpustakaan Digital (Java)
-          <small>CRUD + Database | GUI Swing</small>
-        </div>
-        <div class="project-card static">
-          <i class="fas fa-hand-holding-heart"></i> Layanan Masyarakat (Java)
-          <small>Aplikasi pengaduan warga</small>
-        </div>
-        <div class="project-card static">
-          <i class="fas fa-school-flag"></i> Website Sekolah (Lomba)
-          <small>HTML/CSS/JS | Kompetisi web design</small>
+        <div class="skill-tags">
+          <span class="tag">C++</span>
+          <span class="tag">Java NetBeans</span>
+          <span class="tag">Visual Basic</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Git & Vercel</span>
+          <span class="tag">REST API (Basic)</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT + SOSIAL MEDIA -->
-<section id="contact">
-  <div class="container">
-    <h2><span class="accent">//</span> Hubungi Saya</h2>
-    <div class="contact-flex">
-      <div class="contact-info">
-        <h3>Mari terhubung</h3>
-        <p>Siap untuk kolaborasi, proyek freelance, atau diskusi teknologi.</p>
-        <div class="social-links">
-          <a href="https://www.instagram.com/irfnandkp" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i> @irfnandkp</a>
-          <a href="https://wa.me/6282337193803" target="_blank" class="social-icon wa"><i class="fab fa-whatsapp"></i> 082337193803</a>
-          <a href="mailto:irfanandika@example.com" class="social-icon email"><i class="fas fa-envelope"></i> irfan.pt@edu.ikippgri.ac.id</a>
-        </div>
-        <div class="direct-contact">
-          <p><i class="fas fa-map-pin"></i> Bojonegoro, Jawa Timur</p>
+  <section id="projects">
+    <div class="container">
+      <h2>Proyek & Pengalaman</h2>
+      <div class="project-category">
+        <h3>Proyek selama Kuliah</h3>
+        <div class="project-grid">
+          <a href="https://oneastore.vercel.app/" target="_blank" class="project-card"><strong>One a Store</strong><small>E‑commerce modern, fullstack</small></a>
+          <a href="https://ptioneaclass.vercel.app/" target="_blank" class="project-card"><strong>PTI Class Website</strong><small>Website portofolio kelas interaktif</small></a>
+          <a href="https://valentine-day-ivory.vercel.app/" target="_blank" class="project-card"><strong>Valentine Game</strong><small>Game interaktif berbasis JavaScript</small></a>
+          <a href="https://sim-cuti.vercel.app/" target="_blank" class="project-card"><strong>SIM CUTI Mahasiswa</strong><small>Sistem manajemen cuti digital</small></a>
         </div>
       </div>
-      <form class="contact-form" id="demoForm">
-        <input type="text" placeholder="Nama Lengkap" required>
-        <input type="email" placeholder="Email Aktif" required>
-        <textarea placeholder="Pesan / Tawaran Kerja Sama" rows="4"></textarea>
-        <button type="submit">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
-        <small style="display: block; margin-top: 10px; opacity:0.7;">*Demo form, hubungi via WA/IG untuk respon cepat</small>
-      </form>
+      <div class="project-category">
+        <h3>Pengalaman SMK (RPL)</h3>
+        <div class="project-grid">
+          <div class="project-card static"><strong>Kalkulator C++</strong><small>Aplikasi console aritmetika</small></div>
+          <div class="project-card static"><strong>Game Visual Basic</strong><small>Game edukasi sederhana</small></div>
+          <div class="project-card static"><strong>Aplikasi Kasir (Java)</strong><small>NetBeans + database MySQL</small></div>
+          <div class="project-card static"><strong>Sistem Perpustakaan Java</strong><small>CRUD lengkap</small></div>
+          <div class="project-card static"><strong>Layanan Masyarakat (Java)</strong><small>Aplikasi pengaduan warga</small></div>
+          <div class="project-card static"><strong>Website Sekolah (Lomba)</strong><small>HTML/CSS/JS untuk kompetisi</small></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Kontak</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <p>Terbuka untuk kolaborasi, proyek freelance, atau diskusi teknologi. Jangan ragu untuk menghubungi saya.</p>
+          <div style="margin: 1.5rem 0;">
+            <div class="contact-line"><strong>Instagram</strong> <a href="https://www.instagram.com/irfnandkp" target="_blank">@irfnandkp</a></div>
+            <div class="contact-line"><strong>WhatsApp</strong> <a href="https://wa.me/6282337193803" target="_blank">082337193803</a></div>
+            <div class="contact-line"><strong>Email</strong> irfan.andika@student.ikippgribojonegoro.ac.id</div>
+            <div class="contact-line"><strong>Alamat</strong> Bojonegoro, Jawa Timur, Indonesia</div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" placeholder="Nama lengkap" required>
+          <input type="email" placeholder="Alamat email" required>
+          <textarea rows="4" placeholder="Tulis pesan atau tawaran proyek..."></textarea>
+          <button type="submit" class="submit-btn">Kirim Pesan</button>
+          <small style="display: block; margin-top: 0.6rem; opacity:0.65;">Form demonstrasi — hubungi langsung via WA/IG untuk respons lebih cepat.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2026 Irfan Andika Pratama — dibangun dengan <i class="fas fa-code"></i> & partikel futuristik</p>
-  <div class="footer-social">
-    <a href="https://www.instagram.com/irfnandkp" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/6282337193803" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
+  <div>© 2026 Irfan Andika Pratama — Pendidikan Teknologi Informasi | IKIP PGRI Bojonegoro</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/irfnandkp" target="_blank">Instagram</a>
+    <a href="https://wa.me/6282337193803" target="_blank">WhatsApp</a>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // ========== PARTICLES (seperti dulu) ==========
+  const canvas = document.getElementById("particles");
+  const ctx = canvas.getContext("2d");
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  let particlesArray = [];
+
+  function resizeCanvas() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+    initParticles();
+  }
+
+  function initParticles() {
+    particlesArray = [];
+    const particleCount = Math.min(120, Math.floor(width * height / 8000));
+    for (let i = 0; i < particleCount; i++) {
+      particlesArray.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        size: Math.random() * 2 + 1.2
+      });
+    }
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, width, height);
+    for (let p of particlesArray) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+      ctx.fillStyle = "rgba(143, 158, 255, 0.6)";
+      ctx.fillRect(p.x, p.y, p.size, p.size);
+    }
+    requestAnimationFrame(drawParticles);
+  }
+
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+  });
+  resizeCanvas();
+  drawParticles();
+
+  // ========== TYPING ANIMATION ==========
+  const roles = ["Mahasiswa PTI Semester 2", "Frontend & Backend Learner", "UI/UX Enthusiast", "Bersepeda & Berkreasi"];
+  let roleIdx = 0, charIdx = 0, currentText = "";
+  const typingEl = document.getElementById("typing");
+  let isDeleting = false;
+
+  function typeEffect() {
+    const full = roles[roleIdx];
+    if (isDeleting) {
+      currentText = full.substring(0, charIdx - 1);
+      charIdx--;
+      typingEl.textContent = currentText;
+      if (charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        setTimeout(typeEffect, 450);
+      } else {
+        setTimeout(typeEffect, 45);
+      }
+    } else {
+      currentText = full.substring(0, charIdx + 1);
+      charIdx++;
+      typingEl.textContent = currentText;
+      if (charIdx === full.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1700);
+      } else {
+        setTimeout(typeEffect, 70);
+      }
+    }
+  }
+  typeEffect();
+
+  // ========== MOBILE MENU ==========
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  }
+
+  // ========== SMOOTH SCROLL & ACTIVE LINK ==========
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+        navMenu.classList.remove("active");
+      }
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    const scrollPos = window.scrollY + 120;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const bottom = top + sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < bottom) {
+        current = sec.getAttribute("id");
+      }
+    });
+    navLinks.forEach(a => {
+      a.classList.remove("active");
+      if (a.getAttribute("href") === "#" + current) {
+        a.classList.add("active");
+      }
+    });
+  });
+
+  // ========== CONTACT FORM DEMO ==========
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Terima kasih! Irfan akan segera menghubungi Anda via WhatsApp/Email. Atau hubungi langsung 082337193803.");
+      contactForm.reset();
+    });
+  }
+</script>
 </body>
 </html>
