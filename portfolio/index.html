@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irfan Andika | Web Developer & UI/UX Designer</title>
+<meta name="description" content="Portofolio pribadi Irfan Andika — Mahasiswa Teknik Informatika, Web Developer, dan UI/UX Designer. Lihat proyek, skill, dan pengalaman.">
+<meta name="keywords" content="Irfan Andika, Web Developer, UI UX Designer, Portofolio, Mahasiswa Teknik Informatika">
+<meta name="author" content="Irfan Andika">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Irfan Andika | Web Developer & UI/UX Designer">
+<meta property="og:description" content="Portofolio pribadi — proyek, skill, dan pengalaman.">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+
+<!-- Google Fonts: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- AOS Animation -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== LOADING SCREEN ===================== -->
+<div id="loading-screen">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <span class="loader-text">IA<span class="loader-dot">.</span></span>
+  </div>
+</div>
+
+<!-- ===================== SCROLL PROGRESS BAR ===================== -->
+<div id="scroll-progress"></div>
+
+<!-- ===================== PARTICLE BACKGROUND (Hero only) ===================== -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg fixed-top glass-nav" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Irfan<span class="text-gradient">Andika</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Ganti mode tampilan" title="Ganti mode terang/gelap">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== 1. HOME / HERO ===================== -->
+<section id="home" class="hero-section">
+  <div class="hero-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-duration="900">
+        <div class="hero-photo-wrap mb-4">
+          <img src="https://ui-avatars.com/api/?name=Irfan+Andika&background=2563EB&color=fff&size=300&bold=true&font-size=0.38" alt="Foto profil Irfan Andika" class="hero-photo">
+          <span class="hero-photo-ring"></span>
+        </div>
+        <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100">👋 Halo, perkenalkan saya</p>
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="150">Irfan Andika</h1>
+        <div class="hero-role" data-aos="fade-up" data-aos-delay="200">
+          <span>Mahasiswa Teknik Informatika</span>
+        </div>
+        <div class="hero-typing" data-aos="fade-up" data-aos-delay="250">
+          <span id="typed-text"></span><span class="typing-cursor">|</span>
+        </div>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+          <a href="assets/cv.pdf" download class="btn btn-hero-primary ripple">
+            <i class="fa-solid fa-download me-2"></i>Download CV
+          </a>
+          <a href="#contact" class="btn btn-hero-outline ripple">
+            <i class="fa-solid fa-paper-plane me-2"></i>Hubungi Saya
+          </a>
+        </div>
+        <div class="hero-socials" data-aos="fade-up" data-aos-delay="350">
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down-indicator" aria-label="Gulir ke bawah">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== 2. ABOUT ME ===================== -->
+<section id="about" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Tentang Saya</span>
+      <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+    </div>
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="about-photo-wrap">
+          <img src="https://ui-avatars.com/api/?name=Irfan+Andika&background=7C3AED&color=fff&size=500&bold=true&font-size=0.38" alt="Foto Irfan Andika sedang bekerja" class="img-fluid about-photo">
+          <div class="about-photo-badge">
+            <i class="fa-solid fa-code"></i>
+            <div><strong>2+</strong><span>Tahun Belajar</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <h3 class="about-heading">Mahasiswa Teknik Informatika yang Antusias Membangun Produk Digital</h3>
+        <p class="about-desc">
+          Saya adalah mahasiswa yang memiliki minat besar dalam dunia teknologi, pengembangan website, desain antarmuka (UI/UX), dan kecerdasan buatan. Saya senang mempelajari teknologi baru serta membangun aplikasi yang bermanfaat bagi banyak orang.
+        </p>
+        <div class="row g-3 about-info">
+          <div class="col-sm-6">
+            <div class="about-info-item"><i class="fa-solid fa-user"></i><div><span>Nama</span><strong>Irfan Andika</strong></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="about-info-item"><i class="fa-solid fa-cake-candles"></i><div><span>Umur</span><strong>21 Tahun</strong></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="about-info-item"><i class="fa-solid fa-envelope"></i><div><span>Email</span><strong>irfan.andika@email.com</strong></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="about-info-item"><i class="fa-solid fa-location-dot"></i><div><span>Domisili</span><strong>Bandung, Indonesia</strong></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="about-info-item"><i class="fa-solid fa-graduation-cap"></i><div><span>Pendidikan</span><strong>S1 Teknik Informatika</strong></div></div>
+          </div>
+          <div class="col-sm-6">
+            <div class="about-info-item"><i class="fa-solid fa-university"></i><div><span>Universitas</span><strong>Universitas Teknologi Nusantara</strong></div></div>
+          </div>
+        </div>
+        <div class="about-skill-tags">
+          <span>Web Development</span><span>UI/UX Design</span><span>Backend</span><span>Database</span>
+        </div>
+        <a href="assets/cv.pdf" download class="btn btn-hero-primary ripple mt-4">
+          <i class="fa-solid fa-download me-2"></i>Download CV
+        </a>
+      </div>
+    </div>
+
+    <!-- Counter stats -->
+    <div class="row text-center counter-row" data-aos="fade-up">
+      <div class="col-6 col-md-3">
+        <div class="counter-box"><span class="counter" data-target="15">0</span>+<p>Proyek Selesai</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="counter-box"><span class="counter" data-target="2">0</span><p>Tahun Pengalaman</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="counter-box"><span class="counter" data-target="10">0</span>+<p>Klien Puas</p></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="counter-box"><span class="counter" data-target="6">0</span><p>Sertifikat</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. SKILLS ===================== -->
+<section id="skills" class="section-padding bg-soft">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Kemampuan</span>
+      <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+      <p class="section-subtitle">Teknologi dan tools yang saya kuasai untuk membangun produk digital end-to-end.</p>
+    </div>
+    <div class="row g-4">
+      <!-- Skill cards will be duplicated for each skill -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-html5"></i></span><span class="skill-name">HTML</span><span class="skill-percent">95%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="95"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-css3-alt"></i></span><span class="skill-name">CSS</span><span class="skill-percent">90%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-js"></i></span><span class="skill-name">JavaScript</span><span class="skill-percent">85%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-php"></i></span><span class="skill-name">PHP</span><span class="skill-percent">90%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-solid fa-database"></i></span><span class="skill-name">MySQL</span><span class="skill-percent">90%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-bootstrap"></i></span><span class="skill-name">Bootstrap</span><span class="skill-percent">90%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="90"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-laravel"></i></span><span class="skill-name">Laravel</span><span class="skill-percent">80%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-solid fa-bolt"></i></span><span class="skill-name">Supabase</span><span class="skill-percent">85%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="85"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-brands fa-python"></i></span><span class="skill-name">Python</span><span class="skill-percent">75%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="75"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="skill-card">
+          <div class="skill-top"><span class="skill-icon"><i class="fa-solid fa-pen-ruler"></i></span><span class="skill-name">UI/UX</span><span class="skill-percent">80%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. SERVICES ===================== -->
+<section id="services" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Layanan</span>
+      <h2 class="section-title">What I <span class="text-gradient">Offer</span></h2>
+      <p class="section-subtitle">Solusi digital yang dapat saya bantu wujudkan untuk kebutuhan Anda.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h4>Web Development</h4>
+          <p>Membangun website modern, cepat, dan responsif menggunakan teknologi terkini sesuai kebutuhan bisnis.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h4>UI/UX Design</h4>
+          <p>Merancang antarmuka yang intuitif dan estetis untuk meningkatkan pengalaman pengguna.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+          <h4>Backend Development</h4>
+          <p>Membangun sistem backend yang aman, terstruktur, dan scalable dengan REST API.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+          <h4>Database Design</h4>
+          <p>Merancang struktur basis data yang efisien untuk performa aplikasi yang optimal.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h4>Mobile Friendly Website</h4>
+          <p>Memastikan tampilan website optimal di semua perangkat, dari desktop hingga mobile.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h4>Maintenance Website</h4>
+          <p>Pemeliharaan rutin, update konten, dan perbaikan bug agar website tetap optimal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. PROJECTS ===================== -->
+<section id="projects" class="section-padding bg-soft">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Portofolio</span>
+      <h2 class="section-title">Recent <span class="text-gradient">Projects</span></h2>
+      <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan.</p>
+    </div>
+
+    <div class="project-filter text-center" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="website">Website</button>
+      <button class="filter-btn" data-filter="ui">UI Design</button>
+      <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+      <button class="filter-btn" data-filter="php">PHP</button>
+    </div>
+
+    <div class="row g-4 project-grid">
+      <div class="col-md-6 col-lg-4 project-item" data-category="website php" data-aos="fade-up">
+        <div class="project-card">
+          <div class="project-img"><img src="https://picsum.photos/seed/absensi/600/400" alt="Sistem Absensi Mahasiswa" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-tag">Website • PHP</span>
+            <h4>Sistem Absensi Mahasiswa</h4>
+            <p>Aplikasi absensi berbasis web dengan validasi lokasi dan laporan kehadiran otomatis.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item" data-category="website ui" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card">
+          <div class="project-img"><img src="https://picsum.photos/seed/company/600/400" alt="Website Company Profile" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-tag">Website • UI Design</span>
+            <h4>Website Company Profile</h4>
+            <p>Landing page perusahaan dengan desain modern dan struktur informasi yang jelas.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item" data-category="dashboard php" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card">
+          <div class="project-img"><img src="https://picsum.photos/seed/kasir/600/400" alt="Aplikasi Kasir" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-tag">Dashboard • PHP</span>
+            <h4>Aplikasi Kasir</h4>
+            <p>Sistem point-of-sale untuk toko retail dengan manajemen stok dan laporan penjualan.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item" data-category="website" data-aos="fade-up">
+        <div class="project-card">
+          <div class="project-img"><img src="https://picsum.photos/seed/toko/600/400" alt="Website Toko Online" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-tag">Website</span>
+            <h4>Website Toko Online</h4>
+            <p>E-commerce sederhana dengan keranjang belanja dan integrasi metode pembayaran.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item" data-category="website ui" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card">
+          <div class="project-img"><img src="https://picsum.photos/seed/sekolah/600/400" alt="Website Sekolah" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-tag">Website • UI Design</span>
+            <h4>Website Sekolah</h4>
+            <p>Portal informasi sekolah dengan berita, agenda, dan galeri kegiatan.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item" data-category="dashboard" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card">
+          <div class="project-img"><img src="https://picsum.photos/seed/dashboard/600/400" alt="Dashboard Admin" loading="lazy"></div>
+          <div class="project-body">
+            <span class="project-tag">Dashboard</span>
+            <h4>Dashboard Admin</h4>
+            <p>Panel admin dengan visualisasi data, manajemen pengguna, dan kontrol akses berbasis peran.</p>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. EXPERIENCE ===================== -->
+<section id="experience" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Perjalanan</span>
+      <h2 class="section-title">My <span class="text-gradient">Experience</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2023</span>
+          <h4>Belajar Web Development</h4>
+          <p>Memulai perjalanan belajar HTML, CSS, dan JavaScript secara otodidak melalui kursus online dan dokumentasi resmi.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2024</span>
+          <h4>Freelance Website</h4>
+          <p>Mengerjakan beberapa proyek freelance pembuatan website untuk UMKM dan komunitas kampus.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2025</span>
+          <h4>Mahasiswa Teknik Informatika</h4>
+          <p>Melanjutkan studi di jurusan Teknik Informatika, memperdalam ilmu algoritma, basis data, dan rekayasa perangkat lunak.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2026</span>
+          <h4>Mengembangkan Sistem Absensi Face Recognition</h4>
+          <p>Merancang dan membangun sistem absensi berbasis pengenalan wajah menggunakan Python dan machine learning.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. EDUCATION ===================== -->
+<section id="education" class="section-padding bg-soft">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Pendidikan</span>
+      <h2 class="section-title">My <span class="text-gradient">Education</span></h2>
+    </div>
+    <div class="timeline timeline-alt">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2019 - 2022</span>
+          <h4>SMA Negeri 1</h4>
+          <p>Jurusan MIPA, aktif dalam ekstrakurikuler robotika dan olimpiade komputer.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-dot"><i class="fa-solid fa-university"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2023 - Sekarang</span>
+          <h4>Universitas Teknologi Nusantara</h4>
+          <p>S1 Teknik Informatika, fokus pada pengembangan perangkat lunak dan kecerdasan buatan.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-dot"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2024</span>
+          <h4>Pelatihan Full Stack Web Development</h4>
+          <p>Pelatihan intensif pengembangan web dari sisi front-end hingga back-end.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2025</span>
+          <h4>Bootcamp UI/UX Design</h4>
+          <p>Mempelajari prinsip desain, riset pengguna, dan pembuatan prototipe interaktif.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="timeline-dot"><i class="fa-solid fa-certificate"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2025</span>
+          <h4>Sertifikasi BNSP Junior Web Developer</h4>
+          <p>Meraih sertifikasi kompetensi nasional di bidang pengembangan web.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. CERTIFICATE ===================== -->
+<section id="certificate" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Pencapaian</span>
+      <h2 class="section-title">My <span class="text-gradient">Certificates</span></h2>
+      <p class="section-subtitle">Klik gambar untuk melihat sertifikat secara penuh.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in">
+        <div class="cert-thumb" data-bs-toggle="modal" data-bs-target="#certModal" data-img="https://placehold.co/800x600/2563EB/ffffff?text=Sertifikat+Web+Dev" data-title="Junior Web Developer">
+          <img src="https://placehold.co/400x300/2563EB/ffffff?text=Web+Dev" alt="Sertifikat Junior Web Developer" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+        <div class="cert-thumb" data-bs-toggle="modal" data-bs-target="#certModal" data-img="https://placehold.co/800x600/7C3AED/ffffff?text=Sertifikat+UI%2FUX" data-title="UI/UX Design Bootcamp">
+          <img src="https://placehold.co/400x300/7C3AED/ffffff?text=UI%2FUX" alt="Sertifikat UI/UX Design" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="cert-thumb" data-bs-toggle="modal" data-bs-target="#certModal" data-img="https://placehold.co/800x600/06B6D4/ffffff?text=Sertifikat+Laravel" data-title="Laravel Fundamentals">
+          <img src="https://placehold.co/400x300/06B6D4/ffffff?text=Laravel" alt="Sertifikat Laravel" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+        <div class="cert-thumb" data-bs-toggle="modal" data-bs-target="#certModal" data-img="https://placehold.co/800x600/2563EB/ffffff?text=Sertifikat+Python" data-title="Python for Data Science">
+          <img src="https://placehold.co/400x300/2563EB/ffffff?text=Python" alt="Sertifikat Python" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+        <div class="cert-thumb" data-bs-toggle="modal" data-bs-target="#certModal" data-img="https://placehold.co/800x600/7C3AED/ffffff?text=Sertifikat+BNSP" data-title="Sertifikasi BNSP">
+          <img src="https://placehold.co/400x300/7C3AED/ffffff?text=BNSP" alt="Sertifikat BNSP" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+        <div class="cert-thumb" data-bs-toggle="modal" data-bs-target="#certModal" data-img="https://placehold.co/800x600/06B6D4/ffffff?text=Sertifikat+Database" data-title="Database Design">
+          <img src="https://placehold.co/400x300/06B6D4/ffffff?text=Database" alt="Sertifikat Database Design" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificate Modal -->
+<div class="modal fade" id="certModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content cert-modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="certModalTitle">Sertifikat</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="certModalImg" src="" alt="Tampilan penuh sertifikat" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 9. TESTIMONIAL ===================== -->
+<section id="testimonial" class="section-padding bg-soft">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Testimoni</span>
+      <h2 class="section-title">What They <span class="text-gradient">Say</span></h2>
+    </div>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-card mx-auto">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"Irfan sangat komunikatif dan hasil websitenya melebihi ekspektasi kami. Prosesnya cepat dan rapi."</p>
+            <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Dewi+Lestari&background=06B6D4&color=fff" alt="Foto Dewi Lestari">
+              <div><strong>Dewi Lestari</strong><span>Pemilik UMKM Kopi Senja</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"Desain UI yang dibuat Irfan modern dan mudah digunakan oleh tim kami. Sangat direkomendasikan!"</p>
+            <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=2563EB&color=fff" alt="Foto Budi Santoso">
+              <div><strong>Budi Santoso</strong><span>Ketua Himpunan Mahasiswa</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p>"Sistem absensi yang dibangun berjalan stabil dan sangat membantu proses administrasi kampus."</p>
+            <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Siti+Rahma&background=7C3AED&color=fff" alt="Foto Siti Rahma">
+              <div><strong>Siti Rahma</strong><span>Staff Akademik</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-nav-icon"><i class="fa-solid fa-chevron-left"></i></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-nav-icon"><i class="fa-solid fa-chevron-right"></i></span>
+      </button>
+      <div class="carousel-indicators testimonial-indicators">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10. CONTACT ===================== -->
+<section id="contact" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge">Kontak</span>
+      <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+      <p class="section-subtitle">Punya proyek atau ingin berkolaborasi? Kirim pesan kepada saya.</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="contact-info-card">
+          <h4>Informasi Kontak</h4>
+          <div class="contact-info-item"><i class="fa-brands fa-whatsapp"></i><div><span>WhatsApp</span><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62 812-3456-7890</a></div></div>
+          <div class="contact-info-item"><i class="fa-solid fa-envelope"></i><div><span>Email</span><a href="mailto:irfan.andika@email.com">irfan.andika@email.com</a></div></div>
+          <div class="contact-info-item"><i class="fa-solid fa-location-dot"></i><div><span>Domisili</span><a href="#">Bandung, Indonesia</a></div></div>
+          <div class="contact-socials">
+            <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps?q=Bandung,Indonesia&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi di Google Maps"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="cName">Nama</label>
+              <input type="text" class="form-control" id="cName" name="name" placeholder="Nama lengkap Anda" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="cEmail">Email</label>
+              <input type="email" class="form-control" id="cEmail" name="email" placeholder="email@contoh.com" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="cSubject">Subjek</label>
+              <input type="text" class="form-control" id="cSubject" name="subject" placeholder="Topik pesan Anda" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="cMessage">Pesan</label>
+              <textarea class="form-control" id="cMessage" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-hero-primary ripple w-100 w-md-auto">
+                <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+              </button>
+              <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11. FOOTER ===================== -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="footer-top">
+      <a class="footer-logo" href="#home">Irfan<span class="text-gradient">Andika</span></a>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Irfan Andika. Seluruh hak cipta dilindungi.</p>
+      <p class="footer-made">Dibuat dengan <i class="fa-solid fa-heart"></i> menggunakan HTML, CSS & JavaScript</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" aria-label="Kembali ke atas">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
